@@ -1,12 +1,31 @@
+import random
 
 print("🔮 Welcome to Ayush Agrawal's Fortune Teller (21JE0204) 🔮")
-mood = input("How are you feeling today? (happy/sad/neutral): ").strip().lower()
+mood = input("How are you feeling today? (happy/sad/neutral/stressed): ").strip().lower()
 
-if mood == "happy":
-    print("✨ Your fortune: Great things await you, Ayush! Keep smiling. ✨")
-elif mood == "sad":
-    print("🌧 Your fortune: Tough times don't last, but tough people do.")
-elif mood == "neutral":
-    print("😐 Your fortune: A surprise is waiting for you just around the corner.")
+fortunes = {
+    "happy": [
+        "Great things await you, Ayush! Keep smiling.",
+        "Your joy is contagious—spread it far and wide!",
+    ],
+    "sad": [
+        "The clouds will part soon. Brighter days are coming.",
+        "Sadness is a passing visitor—let it go.",
+    ],
+    "neutral": [
+        "Sometimes peace is the greatest blessing.",
+        "Keep steady, you're doing great.",
+    ],
+    "stressed": [
+        "Take a deep breath—relief is on the way.",
+        "Even Ayush needs rest. Prioritize yourself today.",
+    ],
+    "overwhelmed":[
+        "Take a chill pill,Ayush.Sucess will come."
+    ]
+}
+
+if mood in fortunes:
+    print("✨ Your fortune:", random.choice(fortunes[mood]), "✨")
 else:
-    print("Please enter a valid mood (happy/sad/neutral).")
+    print("Please enter a valid mood.")
